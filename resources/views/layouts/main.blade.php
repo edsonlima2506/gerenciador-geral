@@ -21,6 +21,13 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            background-color: #F7F8FC;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
         }
     </style>
 </head>

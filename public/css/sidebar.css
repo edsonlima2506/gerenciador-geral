@@ -1,0 +1,46 @@
+.sidebar {
+    width: 130px;
+    height: 100vh;
+    background-color: #FFF;
+    box-shadow: 8px 4px 20px 0px #0000001A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar img[alt="Logo da empresa"] {
+    width: 90px;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+    width: 100%;
+}
+
+li {
+    color: #DBDBDB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li:hover {
+    color: #3DE2FF;
+    background-color: #3de2ff3a;
+}
+
+i {
+    font-size: 30px;
+}
+
+h4 {
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
