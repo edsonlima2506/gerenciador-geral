@@ -1,0 +1,37 @@
+header {
+    width: 100%;
+    height: 80px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.greetings {
+    display: flex;
+    margin-left: 155px;
+}
+
+.greetings i {
+    color: #085FCE;
+    font-size: 25px;
+}
+
+.greetings h1 {
+    margin: 0;
+    margin-left: 15px;
+    font-size: 20px;
+    color: #272727;
+}
+
+.profile {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.profile i {
+    font-size: 25px;
+    color: #272727;
+}
