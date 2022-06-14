@@ -3,18 +3,24 @@
     margin-top: -650px;
     margin-left: 195px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
 }
 
 /* Index  */
+
+.clients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .clients-container h1 {
     font-size: 20px;
     font-weight: 400;
     color: #272727;
 }
-
 
 span {
     display: flex;
@@ -26,23 +32,6 @@ span i {
     margin-right: 10px;
 }
 
-/* Create  */
-
-#breadcrumbs-item {
-    display: inline-block;
-}
-
-.form-clients-container {
-    width: 84%;
-    height: 75vh;
-    background-color: #FFF;
-    margin-top: 25px;
-    margin-left: 195px;
-    border: 1px solid rgba(219, 219, 219, 0.3);
-    border-radius: 10px;
-    padding: 25px;
-}
-
-.mb-3 {
-    width: 80% !important;
+#clients-table-container {
+    margin-top: 50px;
 }

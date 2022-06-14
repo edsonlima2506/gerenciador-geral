@@ -15,6 +15,10 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     
+    {{-- DataTable  --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
     {{-- Icons --}}
     <script src="https://unpkg.com/phosphor-icons"></script>
 
@@ -32,6 +36,14 @@
 
         a {
             text-decoration: none;
+        }
+
+        thead > tr > th.sorting_asc:before {
+            color: aqua;
+        }
+
+        thead > tr > th.sorting_desc:after {
+            color: aqua;
         }
     </style>
 </head>

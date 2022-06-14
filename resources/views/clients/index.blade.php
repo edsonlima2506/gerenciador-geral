@@ -10,10 +10,12 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 <div class="clients-container">
-    <h1>Pacientes</h1>
-    <a href="/clients/create" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-        <span><i class="ph-plus-circle"></i> Add</span>
-    </a>
+    <div class="clients-header">
+        <h1>Pacientes</h1>
+        <a href="/clients/create" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <span><i class="ph-plus-circle"></i> Add</span>
+        </a>
+    </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
@@ -66,41 +68,64 @@
             </form>
         </div>
     </div>
+    <div id="clients-table-container">
+        <table id="clients_table">
+            <thead>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Aniversário</th>
+            </thead>
+            <tbody>
+                @foreach($clients as $client)
+                <tr>
+                    <td>{{$client->id}}</td>
+                    <td>{{$client->name}}</td>
+                    <td>{{$client->birthday}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script>
-   $(document).ready(function() {
-    $('#save_button').on('click', function() {
-        dados = {
-            name: $('#client_name').val(),
-            email: $('#client_email').val(),
-            birthday: $('#client_birthday').val(),
-            gender: $('#client_gender').val(),
-            number: $('#client_number').val(),
-            adress: $('#client_adress').val(),
-            adress_number: $('#client_adress_number').val(),
-        }
-
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "{{ url('/clients/store') }}",
-            data: {
-                data: dados,
-                _token: '{{csrf_token()}}'
-            },
-            success: function(response) {
-                if (response == 1) {
-                    $('#client_name').val("");
-                    $('#client_email').val("");
-                    $('#client_birthday').val("");
-                    $('#client_gender').val("");
-                    $('#client_number').val("");
-                    $('#client_adress').val("");
-                    $('#client_adress_number').val("");
-                }
+    $(document).ready(function() {
+        $('#save_button').on('click', function() {
+            dados = {
+                name: $('#client_name').val(),
+                email: $('#client_email').val(),
+                birthday: $('#client_birthday').val(),
+                gender: $('#client_gender').val(),
+                number: $('#client_number').val(),
+                adress: $('#client_adress').val(),
+                adress_number: $('#client_adress_number').val(),
             }
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "{{ url('/clients/store') }}",
+                data: {
+                    data: dados,
+                    _token: '{{csrf_token()}}'
+                },
+                success: function(response) {
+                    if (response == 1) {
+                        $('#client_name').val("");
+                        $('#client_email').val("");
+                        $('#client_birthday').val("");
+                        $('#client_gender').val("");
+                        $('#client_number').val("");
+                        $('#client_adress').val("");
+                        $('#client_adress_number').val("");
+                    }
+                }
+            });
+        });
+
+        $(document).ready( function () {
+            $('#clients_table').DataTable();
         });
     });
-    })
+
 </script>

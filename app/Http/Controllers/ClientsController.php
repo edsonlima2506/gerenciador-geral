@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ClientsController extends Controller
 {
     public function index() {
-        return view('clients.index');
+        $clients = Client::all();
+        return view('clients.index', compact('clients'));
     }
 
     public function store(Request $request) {
