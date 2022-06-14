@@ -32,7 +32,7 @@ li {
     transition: 0.8s;
 }
 
-li:hover {
+li:hover, .actived-item {
     color: #3DE2FF;
     background-color: #3de2ff3a;
 }

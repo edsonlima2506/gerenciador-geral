@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\ClientsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +27,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // Calendar 
+    Route::get('/calendar', [CalendarController::class, 'index']);
+
+    // Clients 
+    Route::get('/clients', [ClientsController::class, 'index']);
+    Route::post('/clients/store', [ClientsController::class, 'store']);
 });
